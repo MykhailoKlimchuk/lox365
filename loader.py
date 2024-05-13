@@ -65,6 +65,9 @@ class Lox365(unohelper.Base, XLox365):
         args = (args[0], shrunk_dataarray1, shrunk_dataarray2, *args[3:],)
         return lx.XLOOKUP(*args)
 
+    def MYTEST(self, *args):
+        return lx.MYTEST(*args)
+
 def createInstance(ctx):
     return Lox365(ctx)
 
