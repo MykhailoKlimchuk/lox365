@@ -63,7 +63,7 @@ def XLOOKUP(lookupValue, lookupArray, returnArray, ifNotFound=ERR_NA):
 
 
 def MYTEST(value):
-    return (f"Hello DOKKA {value}", )
+    return (tuple(f"Hello DOKKA {value}"), )
 
 # Too slow
 # def XLOOKUP_old1(lookup_value, lookup_array, return_array, if_not_found):

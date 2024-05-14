@@ -41,6 +41,7 @@ class Lox365(unohelper.Base, XLox365):
     def IMAGE    (self, *args): return lx.IMAGE    (*args)
     def SORT     (self, *args): return lx.SORT     (*args)
     def TEXTSPLIT(self, *args): return lx.TEXTSPLIT(*args)
+    def MYTEST(self, *args): return lx.MYTEST(*args)
     def TOCOL    (self, *args): return lx.TOCOL    (*args)
 
     def UNIQUE(self, *args):
@@ -65,8 +66,6 @@ class Lox365(unohelper.Base, XLox365):
         args = (args[0], shrunk_dataarray1, shrunk_dataarray2, *args[3:],)
         return lx.XLOOKUP(*args)
 
-    def MYTEST(self, *args):
-        return lx.MYTEST(*args)
 
 def createInstance(ctx):
     return Lox365(ctx)
