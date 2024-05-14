@@ -73,6 +73,17 @@
             </node>
           </node>
         </node>
+        <node oor:name="MYTEST" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">MYTEST</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">TEST.</value></prop>
+          <prop oor:name="Category"><value>Add-in</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="value" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">value</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">value.</value></prop>
+            </node>
+          </node>
+        </node>
         <node oor:name="TOCOL" oor:op="replace">
           <prop oor:name="DisplayName"><value xml:lang="en">TOCOL</value></prop>
           <prop oor:name="Description"><value xml:lang="en">Returns the array as one column. Provided by Lox365.</value></prop>

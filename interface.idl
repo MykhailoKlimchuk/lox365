@@ -19,6 +19,9 @@ module org { module openoffice { module sheet { module addin {
             [in] any sortIndex,
             [in] any sortOrder
         );
+        sequence< sequence< any > > MYTEST(
+            [in] string value
+        );
         sequence< sequence< any > > TEXTSPLIT(
             [in] string text,
             [in] string colDelimiter
