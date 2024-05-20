@@ -19,9 +19,9 @@ module org { module openoffice { module sheet { module addin {
             [in] any sortIndex,
             [in] any sortOrder
         );
-        sequence< sequence< any > > MYTEST(
-            [in] any account,
-            [in] any total,
+        sequence< sequence< any > > TBACC(
+            [in] any account_code,
+            [in] any total
         );
         sequence< sequence< any > > TEXTSPLIT(
             [in] string text,

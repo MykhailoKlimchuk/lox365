@@ -65,7 +65,15 @@ def XLOOKUP(lookupValue, lookupArray, returnArray, ifNotFound=ERR_NA):
     except ValueError: return ((ifNotFound,),)
 
 
-def tbacc(audit_id, token, host, account_code, total):
+def format_data(func):
+    def inner(*args, **kwargs):
+        data = func(*args, **kwargs)
+        return ((data, ),)
+    return inner
+
+
+@format_data
+def tbacc(audit_id, token, account_code, host, total):
     url = f'{host}/api/v1/trial_balance/{audit_id}'
 
     req = urllib.request.Request(
