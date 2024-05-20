@@ -20,7 +20,8 @@ module org { module openoffice { module sheet { module addin {
             [in] any sortOrder
         );
         sequence< sequence< any > > MYTEST(
-            [in] any value
+            [in] any account,
+            [in] any total,
         );
         sequence< sequence< any > > TEXTSPLIT(
             [in] string text,

@@ -41,7 +41,21 @@ class Lox365(unohelper.Base, XLox365):
     def IMAGE    (self, *args): return lx.IMAGE    (*args)
     def SORT     (self, *args): return lx.SORT     (*args)
     def TEXTSPLIT(self, *args): return lx.TEXTSPLIT(*args)
-    def MYTEST(self, *args): return lx.MYTEST(*args)
+
+    def TBACC(self, *args):
+
+        desktop = self.ctx.ServiceManager.createInstanceWithContext(
+            "com.sun.star.frame.Desktop", self.ctx)
+
+        model = desktop.getCurrentComponent()
+
+        oSheet = model.getSheets().getByIndex(1)  # technical sheet
+
+        audit_id_cell = oSheet.getCellRangeByName("A1")
+        token_cell = oSheet.getCellRangeByName("A2")
+        host_cell = oSheet.getCellRangeByName("A3")
+        return lx.tbacc(audit_id_cell.String, token_cell.String, host_cell.String, *args)
+
     def TOCOL    (self, *args): return lx.TOCOL    (*args)
 
     def UNIQUE(self, *args):

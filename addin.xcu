@@ -73,14 +73,18 @@
             </node>
           </node>
         </node>
-        <node oor:name="MYTEST" oor:op="replace">
-          <prop oor:name="DisplayName"><value xml:lang="en">MYTEST</value></prop>
-          <prop oor:name="Description"><value xml:lang="en">TEST.</value></prop>
+        <node oor:name="TBACC" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">TBACC</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Trial Balance for account.</value></prop>
           <prop oor:name="Category"><value>Add-in</value></prop>
           <node oor:name="Parameters">
-            <node oor:name="value" oor:op="replace">
-              <prop oor:name="DisplayName"><value xml:lang="en">value</value></prop>
-              <prop oor:name="Description"><value xml:lang="en">value.</value></prop>
+            <node oor:name="account" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">account</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">account.</value></prop>
+            </node>
+            <node oor:name="total" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">total</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">total.</value></prop>
             </node>
           </node>
         </node>

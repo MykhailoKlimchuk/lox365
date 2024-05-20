@@ -1,5 +1,8 @@
 # import functools
+import json
 import pprint
+import urllib
+import urllib.request
 
 ERR_CALC = '#CALC!'
 ERR_NA = '#N/A'
@@ -62,8 +65,30 @@ def XLOOKUP(lookupValue, lookupArray, returnArray, ifNotFound=ERR_NA):
     except ValueError: return ((ifNotFound,),)
 
 
-def MYTEST(value):
-    return (f"Hello DOKKA {value}", )
+def tbacc(audit_id, token, host, account_code, total):
+    url = f'{host}/api/v1/trial_balance/{audit_id}'
+
+    req = urllib.request.Request(
+        url,
+        method="POST",
+        data=json.dumps({
+            "account": account_code,
+            "total": total
+        }).encode('utf-8'),
+        headers={
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+        }
+    )
+    try:
+        response = urllib.request.urlopen(req)
+    except:
+        return "Bad request"
+    data = response.read()
+
+    return ((data.decode('utf-8').replace("\n", ""), ),)
+
 
 # Too slow
 # def XLOOKUP_old1(lookup_value, lookup_array, return_array, if_not_found):
